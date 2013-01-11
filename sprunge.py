@@ -19,8 +19,7 @@ class Sprunge(db.Model):
     date = db.DateTimeProperty(auto_now_add=True)
 
 class Index(webapp.RequestHandler):
-
-    u = 'http://sprunge.us'
+    u = 'http://' + os.environ["NGINX_HOST"] + ":" + os.environ["NGINX_PORT"]
     r = 'sprunge'
 
     def help(self, u, r):
